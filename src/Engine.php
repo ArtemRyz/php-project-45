@@ -19,7 +19,7 @@ function runGame($info, $gameQuestion, $gameResult)
         if ($userAnswer == $gameResult[$i]) {
             line('Correct!');
         } elseif ($userAnswer != $gameResult[$i]) {
-            line("%s is wrong answer ;(. Correct answer was %s.", $userAnswer, $gameResult[$i]);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $gameResult[$i]);
             line("Let's try again, %s!", $name);
             break;
         }
