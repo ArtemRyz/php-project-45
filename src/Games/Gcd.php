@@ -13,7 +13,7 @@ function runGcd()
     $answer = 0;
     $arrQuestion = [];
     $arrAnswer = [];
-    while ($i < 3) {
+    while ($i < $round) {
         $num1 = rand(1, 20);
         $num2 = rand(1, 20);
         $question = "{$num1} {$num2}";
