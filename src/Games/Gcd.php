@@ -10,6 +10,7 @@ function runGcd()
 {
     $round = 3;
     $i = 0;
+    $answer = 0;
     $arrQuestion = [];
     $arrAnswer = [];
     while ($i < 3) {

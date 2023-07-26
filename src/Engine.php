@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Cli\greeting;
 
-function runGame(string $info, $gameQuestion, $gameResult)
+function runGame(string $info, array $gameQuestion, array $gameResult)
 {
     $name = greeting();
     line($info);

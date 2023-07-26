@@ -39,8 +39,9 @@ function randomOperator()
     return $randomOperator;
 }
 
-function result($number1, $operation, $number2)
+function result(int $number1, string $operation, int $number2)
 {
+    $correctResult = 0;
     switch ($operation) {
         case "+":
             $correctResult = $number1 + $number2;
