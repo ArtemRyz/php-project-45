@@ -4,6 +4,36 @@
 ### CodeClimate Maintainability:
 [![Maintainability](https://api.codeclimate.com/v1/badges/c2475677e93987622c69/maintainability)](https://codeclimate.com/github/ArtemRyz/php-project-45/maintainability)
 
+### Description:
+
+«Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. Игры:
+
+### Games:
+
+Калькулятор. Арифметические выражения, которые необходимо вычислить.
+Прогрессия. Поиск пропущенных чисел в последовательности чисел.
+Определение четного числа.
+Определение наибольшего общего делителя.
+Определение простого числа.
+
+### Minimum requirements:
+
+* [Composer 2.5.7 or above for the latest version.](https://getcomposer.org)
+
+### Installation:
+
+`git clone git@github.com:ArtemRyz/php-project-45.git`
+`cd php-project-45`
+`make install`
+
+### Run Games:
+
+`make brain-calc`
+`make brain-even`
+`make brain-gcd`
+`make nrain prime`
+`make brain-progression`
+
 ### Asciinema Brain-even:
 [![asciicast](https://asciinema.org/a/SGxAxUovieEd5VTGzvB5eoAg9.svg)](https://asciinema.org/a/SGxAxUovieEd5VTGzvB5eoAg9)
 
