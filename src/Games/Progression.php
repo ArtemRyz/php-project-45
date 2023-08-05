@@ -3,6 +3,7 @@
 namespace BrainGames\Progression;
 
 use function BrainGames\Engine\runGame;
+
 use const BrainGames\Engine\ROUNDS;
 
 const RULE = 'What number is missing in the progression?';
@@ -34,7 +35,7 @@ function giveLineOfNumbers(): array
     $randNum = rand(0, 100);
     $stepOfNumber = rand(1, 5);
     $arr = [];
-    
+
     for ($i = 0; $i < $lenght; $i++) {
         $arr[] = $randNum;
         $randNum = $randNum  + $stepOfNumber;

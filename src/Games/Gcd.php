@@ -3,6 +3,7 @@
 namespace BrainGames\Gcd;
 
 use function BrainGames\Engine\runGame;
+
 use const BrainGames\Engine\ROUNDS;
 
 const RULE = 'Find the greatest common divisor of given numbers.';
@@ -34,7 +35,7 @@ function calcGcd(int $min, int $max): int
     if ($min === $max) {
         return $min;
     }
-    
+
     for ($i = $min; $i >= 1; $i -= 1) {
         $gcd = $i;
         if ($max % $i === 0 && $min % $i === 0) {

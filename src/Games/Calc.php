@@ -3,13 +3,14 @@
 namespace BrainGames\Calc;
 
 use function BrainGames\Engine\runGame;
+
 use const BrainGames\Engine\ROUNDS;
 
 const RULE = 'What is the result of the expression?';
 
 function runCalc(): void
 {
-    $gameData =[];
+    $gameData = [];
     $operators = ['+', '-', '*'];
 
     for ($i = 0; $i < ROUNDS; $i += 1) {

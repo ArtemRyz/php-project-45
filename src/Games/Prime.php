@@ -3,6 +3,7 @@
 namespace BrainGames\Prime;
 
 use function BrainGames\Engine\runGame;
+
 use const BrainGames\Engine\ROUNDS;
 
 const RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -13,7 +14,7 @@ function runPrime(): void
 
     for ($i = 0; $i < ROUNDS; $i += 1) {
         $question = rand(1, 20);
-        $answer = (isPrime($question)? 'yes' : 'no');
+        $answer = (isPrime($question) ? 'yes' : 'no');
         $gameData[$question] = $answer;
     }
 
