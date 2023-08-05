@@ -23,7 +23,9 @@
 ### Installation:
 
 `git clone git@github.com:ArtemRyz/php-project-45.git`
+
 `cd php-project-45`
+
 `make install`
 
 ### Run Games:
