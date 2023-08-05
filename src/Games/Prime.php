@@ -3,39 +3,33 @@
 namespace BrainGames\Prime;
 
 use function BrainGames\Engine\runGame;
+use const BrainGames\Engine\ROUNDS;
 
-const GAMEINFO = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function checkPrime(int $num)
+function runPrime(): void
 {
-    if ($num === 1) {
-        return 'no';
+    $gameData = [];
+
+    for ($i = 0; $i < ROUNDS; $i += 1) {
+        $question = rand(1, 20);
+        $answer = (isPrime($question)? 'yes' : 'no');
+        $gameData[$question] = $answer;
     }
 
-    for ($i = 2; $i < $num; $i++) {
-        if ($num % $i === 0) {
-            return 'no';
-        }
-    }
-    return 'yes';
+    runGame(RULE, $gameData);
 }
 
-
-
-function runPrime()
+function isPrime(int $num): string
 {
-    $round = 3;
-    $i = 0;
-    $arrQuestion = [];
-    $arrAnswer = [];
-
-    while ($i < $round) {
-        $question = rand(1, 20);
-        $answer = checkPrime($question);
-        $arrQuestion[] = $question;
-        $arrAnswer[] = $answer;
-        $i++;
+    if ($num === 1) {
+        return false;
     }
 
-    runGame(GAMEINFO, $arrQuestion, $arrAnswer);
+    for ($i = 2; $i < $num; $i += 1) {
+        if ($num % $i === 0) {
+            return false;
+        }
+    }
+    return true;
 }

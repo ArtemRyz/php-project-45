@@ -4,25 +4,25 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Cli\greeting;
 
-function runGame(string $info, array $gameQuestion, array $gameResult)
+const ROUNDS = 3;
+
+function runGame(string $gameRule, array $gameData) #array $gameQuestion, array $gameResult)
 {
-    $name = greeting();
-    line($info);
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    line($gameRule);
 
-    $rounds = 3;
-
-    for ($i = 0; $i < $rounds; $i++) {
-        line("Question: %s", $gameQuestion[$i]);
+    foreach ($gameData as $gameQuestion => $gameResult) {
+        line("Question: %s", $gameQuestion);
         $userAnswer = prompt('Your answer');
-        if ($userAnswer == $gameResult[$i]) {
-            line('Correct!');
-        } elseif ($userAnswer != $gameResult[$i]) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $gameResult[$i]);
+        if ($userAnswer != $gameResult) { #почему не работает с '!=='?
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $gameResult);
             line("Let's try again, %s!", $name);
             return;
         }
+        line('Correct!');
     }
     line("Congratulations, %s!", $name);
 }

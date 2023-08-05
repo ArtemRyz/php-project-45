@@ -3,30 +3,19 @@
 namespace BrainGames\Even;
 
 use function BrainGames\Engine\runGame;
+use const BrainGames\Engine\ROUNDS;
 
-const GAMEINFO = 'Answer "yes" if the number is even, otherwise answer "no".';
+const RULE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-
-function isEven(int $num)
+function runEven(): void
 {
-    if ($num % 2 === 0) {
-        return 'yes';
-    } else {
-        return 'no';
-    }
-}
+    $gameData = [];
 
-function runEven()
-{
-    $answer = [];
-    $question = [];
-    $round = 3;
-    $i = 0;
-    while ($i < $round) {
-        $randomNum = rand(1, 100);
-        $question[] = $randomNum;
-        $answer[] = isEven($randomNum);
-        $i++;
+    for ($i = 0; $i < ROUNDS; $i += 1) {
+        $question = rand(1, 100);
+        $answer = ($question % 2 === 0)? 'yes' : 'no';
+        $gameData[$question] = $answer;
     }
-    runGame(GAMEINFO, $question, $answer);
+    
+    runGame(RULE, $gameData);
 }
