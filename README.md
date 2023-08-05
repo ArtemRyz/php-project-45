@@ -28,11 +28,11 @@
 
 ### Run Games:
 
-`make brain-calc`
-`make brain-even`
-`make brain-gcd`
-`make nrain prime`
-`make brain-progression`
+"make brain-calc\n"
+"make brain-even\n"
+"make brain-gcd\n"
+"make nrain prime\n"
+"make brain-progression\n"
 
 ### Asciinema Brain-even:
 [![asciicast](https://asciinema.org/a/SGxAxUovieEd5VTGzvB5eoAg9.svg)](https://asciinema.org/a/SGxAxUovieEd5VTGzvB5eoAg9)
