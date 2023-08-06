@@ -21,7 +21,7 @@ function runPrime(): void
     runGame(RULE, $gameData);
 }
 
-function isPrime(int $num): string
+function isPrime(int $num): bool
 {
     if ($num === 1) {
         return false;
