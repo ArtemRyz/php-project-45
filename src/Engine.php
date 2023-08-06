@@ -17,7 +17,8 @@ function runGame(string $gameRule, array $gameData): void
     foreach ($gameData as $gameQuestion => $gameResult) {
         line("Question: %s", $gameQuestion);
         $userAnswer = prompt('Your answer');
-        if ($userAnswer != $gameResult) { #почему не работает с '!=='?
+
+        if ($userAnswer !== $gameResult) { #почему не работает с '!=='?
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $gameResult);
             line("Let's try again, %s!", $name);
             return;
