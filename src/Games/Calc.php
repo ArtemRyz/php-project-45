@@ -26,7 +26,7 @@ function runCalc(): void
     runGame(RULE, $gameData);
 }
 
-function calcResult(int $number1, string $operation, int $number2): int
+function calcResult(int $number1, string $operation, int $number2): string # Почему не работает если поставить тип int?
 {
     switch ($operation) {
         case "+":
