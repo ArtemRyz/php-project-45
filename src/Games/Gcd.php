@@ -30,7 +30,7 @@ function runGcd(): void
     runGame(RULE, $gameData);
 }
 
-function calcGcd(int $min, int $max): int
+function calcGcd(int $min, int $max): string # Почему не работает если поставить тип int?
 {
     if ($min === $max) {
         return $min;
