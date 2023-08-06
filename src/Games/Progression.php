@@ -17,7 +17,8 @@ function runProgression(): void
         $progression = giveLineOfNumbers();
 
         $randKey = array_rand($progression, 1);
-        $answer = $progression[$randKey];
+        $answer = (string)$progression[$randKey];
+        print_r($answer);
 
         $progressionSpace = $progression;
         $progressionSpace[$randKey] = '..';
@@ -31,14 +32,13 @@ function runProgression(): void
 
 function giveLineOfNumbers(): array
 {
-    $lenght = 11;
+    $lenght = 10;
     $randNum = rand(0, 100);
     $stepOfNumber = rand(1, 5);
-    $arr = [];
+    $arr = [$randNum];
 
-    for ($i = 0; $i < $lenght; $i++) {
-        $arr[] = $randNum;
-        $randNum = $randNum  + $stepOfNumber;
+    for ($i = 0; $i <= $lenght; $i++) {
+        $arr[] = $arr[$i]  + $stepOfNumber;
     }
 
     return $arr;
