@@ -20,7 +20,6 @@ function runProgression(): void
 
         $randKey = array_rand($progression, 1);
         $answer = (string)$progression[$randKey];
-        print_r($answer);
 
         $progressionSpace = $progression;
         $progressionSpace[$randKey] = '..';
@@ -32,7 +31,7 @@ function runProgression(): void
     runGame(RULE, $gameData);
 }
 
-function giveLineOfNumbers($number, $step): array
+function giveLineOfNumbers(int $number, string $step): array
 {
     $lenght = 10;
     $arr = [$number];
