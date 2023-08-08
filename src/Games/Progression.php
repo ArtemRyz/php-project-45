@@ -14,7 +14,9 @@ function runProgression(): void
     $gameData = [];
 
     for ($i = 0; $i < ROUNDS; $i += 1) {
-        $progression = giveLineOfNumbers();
+        $randNum = rand(0, 100);
+        $stepOfPrgression = rand(1, 5);
+        $progression = giveLineOfNumbers($randNum, $stepOfPrgression);
 
         $randKey = array_rand($progression, 1);
         $answer = (string)$progression[$randKey];
@@ -30,15 +32,13 @@ function runProgression(): void
     runGame(RULE, $gameData);
 }
 
-function giveLineOfNumbers(): array
+function giveLineOfNumbers($number, $step): array
 {
     $lenght = 10;
-    $randNum = rand(0, 100);
-    $stepOfNumber = rand(1, 5);
-    $arr = [$randNum];
+    $arr = [$number];
 
     for ($i = 0; $i <= $lenght; $i++) {
-        $arr[] = $arr[$i]  + $stepOfNumber;
+        $arr[] = $arr[$i]  + $step;
     }
 
     return $arr;
