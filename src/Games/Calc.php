@@ -35,5 +35,7 @@ function calcResult(int $number1, string $operation, int $number2): string # ĞŸĞ
             return $number1 - $number2;
         case "*":
             return $number1 * $number2;
+        default:
+            return "Incorrectl value";
     }
 }
