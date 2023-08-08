@@ -32,14 +32,12 @@ function runGcd(): void
 
 function calcGcd(int $min, int $max): string # Почему не работает если поставить тип int?
 {
-    if ($min === $max) {
-        return $min;
-    }
-
+    $gcd = 0;
     for ($i = $min; $i >= 1; $i -= 1) {
-        $gcd = $i;
         if ($max % $i === 0 && $min % $i === 0) {
-            return $gcd;
+            $gcd = $i;
+            break;
         }
     }
+    return $gcd;
 }
