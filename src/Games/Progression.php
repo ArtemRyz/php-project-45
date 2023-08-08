@@ -31,7 +31,7 @@ function runProgression(): void
     runGame(RULE, $gameData);
 }
 
-function giveLineOfNumbers(int $number, string $step): array
+function giveLineOfNumbers(int $number, int $step): array
 {
     $lenght = 10;
     $arr = [$number];
