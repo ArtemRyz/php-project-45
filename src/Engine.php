@@ -18,11 +18,13 @@ function runGame(string $gameRule, array $gameData): void
         line("Question: %s", $gameQuestion);
         $userAnswer = prompt('Your answer');
 
-        if ($userAnswer !== $gameResult) { 
+        if ($userAnswer !== $gameResult) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $gameResult);
             line("Let's try again, %s!", $name);
             return;
-        } else line('Correct!');
+        } else {
+            line('Correct!');
+        }
     }
     line("Congratulations, %s!", $name);
 }
