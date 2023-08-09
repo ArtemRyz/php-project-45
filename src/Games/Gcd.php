@@ -18,11 +18,11 @@ function runGcd(): void
         $num2 = rand(1, 20);
         $question = "{$num1} {$num2}";
         if ($num1 < $num2) {
-            $answer = calcGcd($num1, $num2);
+            $answer = (string)calcGcd($num1, $num2);
         } elseif ($num1 > $num2) {
-            $answer = calcGcd($num2, $num1);
+            $answer = (string)calcGcd($num2, $num1);
         } elseif ($num1 === $num2) {
-            $answer = $num1;
+            $answer = (string)$num1;
         }
         $gameData[$question] = $answer;
     }
@@ -30,9 +30,10 @@ function runGcd(): void
     runGame(RULE, $gameData);
 }
 
-function calcGcd(int $min, int $max): string # Почему не работает если поставить тип int?
+function calcGcd(int $min, int $max): int
 {
     $gcd = 0;
+
     for ($i = $min; $i >= 1; $i -= 1) {
         if ($max % $i === 0 && $min % $i === 0) {
             $gcd = $i;
