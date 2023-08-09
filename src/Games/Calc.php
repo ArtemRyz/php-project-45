@@ -19,14 +19,14 @@ function runCalc(): void
 
         $operator = $operators[array_rand($operators, 1)];
         $question = "$num1 $operator $num2";
-        $correctAnswer = calcResult($num1, $operator, $num2);
+        $correctAnswer = (string)calcResult($num1, $operator, $num2);
         $gameData[$question] = $correctAnswer;
     }
 
     runGame(RULE, $gameData);
 }
 
-function calcResult(int $number1, string $operation, int $number2): string # Почему не работает если поставить тип int?
+function calcResult(int $number1, string $operation, int $number2): int
 {
     switch ($operation) {
         case "+":
@@ -36,6 +36,6 @@ function calcResult(int $number1, string $operation, int $number2): string # П�
         case "*":
             return $number1 * $number2;
         default:
-            return "Incorrectl value";
+            return "Incorrectly value";
     }
 }
