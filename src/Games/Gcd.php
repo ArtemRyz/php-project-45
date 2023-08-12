@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Gcd;
+namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\runGame;
 
@@ -16,15 +16,15 @@ function runGcd(): void
     for ($i = 0; $i < ROUNDS; $i += 1) {
         $num1 = rand(1, 20);
         $num2 = rand(1, 20);
+        $maxNumber = max($num1, $num2);
+        $minNumber = min($num1, $num2);
         $question = "{$num1} {$num2}";
-        if ($num1 < $num2) {
-            $answer = (string)calcGcd($num1, $num2);
-        } elseif ($num1 > $num2) {
-            $answer = (string)calcGcd($num2, $num1);
-        } elseif ($num1 === $num2) {
+        $answer = (string)calcGcd($maxNumber, $minNumber);
+        if ($num1 === $num2) {
             $answer = (string)$num1;
         }
-        $gameData[$question] = $answer;
+
+        $gameData[] = [$question, $answer];
     }
 
     runGame(RULE, $gameData);
