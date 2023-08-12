@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Progression;
+namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\runGame;
 
@@ -16,7 +16,7 @@ function runProgression(): void
     for ($i = 0; $i < ROUNDS; $i += 1) {
         $randNum = rand(0, 100);
         $stepOfPrgression = rand(1, 5);
-        $progression = giveLineOfNumbers($randNum, $stepOfPrgression);
+        $progression = makeProgression($randNum, $stepOfPrgression);
 
         $randKey = array_rand($progression, 1);
         $answer = (string)$progression[$randKey];
@@ -25,19 +25,18 @@ function runProgression(): void
         $progressionSpace[$randKey] = '..';
 
         $impl = implode(" ", $progressionSpace);
-        $gameData[$impl] = $answer;
+        $gameData[] = [$impl, $answer];
     }
 
     runGame(RULE, $gameData);
 }
 
-function giveLineOfNumbers(int $number, int $step): array
+function makeProgression(int $number, int $step): array
 {
-    $lenght = 10;
     $arr = [$number];
 
-    for ($i = 0; $i <= $lenght; $i++) {
-        $arr[] = $arr[$i]  + $step;
+    for ($i = 1; $i < 10; $i += 1) {
+        $arr[] = $arr[$i - 1]  + $step;
     }
 
     return $arr;
