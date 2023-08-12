@@ -32,6 +32,6 @@ function isPrime(int $num): bool
             return false;
         }
     }
-    
+
     return true;
 }
