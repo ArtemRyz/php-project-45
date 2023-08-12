@@ -1,6 +1,8 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\Games\Calc;
+
+use Exception;
 
 use function BrainGames\Engine\runGame;
 
@@ -20,7 +22,7 @@ function runCalc(): void
         $operator = $operators[array_rand($operators, 1)];
         $question = "$num1 $operator $num2";
         $correctAnswer = (string)calcResult($num1, $operator, $num2);
-        $gameData[$question] = $correctAnswer;
+        $gameData[] = [$question, $correctAnswer];
     }
 
     runGame(RULE, $gameData);
@@ -36,6 +38,6 @@ function calcResult(int $number1, string $operation, int $number2): int
         case "*":
             return $number1 * $number2;
         default:
-            return "Incorrectly value";
+            throw new Exception("Incorrectly operation '{$operation}'");
     }
 }
