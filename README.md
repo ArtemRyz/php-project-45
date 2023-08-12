@@ -19,28 +19,30 @@
 * [Composer 2.5 or above for the latest version.](https://getcomposer.org)
 * [PHP 8.1 or above for the latest version.](https://www.php.net)
 * Make Tool:
-`sudo apt update`
-`sudo apt install make`
+
+`$ sudo apt update`
+
+`$ sudo apt install make`
 
 ### Installation:
 
-`git clone git@github.com:ArtemRyz/php-project-45.git`
+`$ git clone git@github.com:ArtemRyz/php-project-45.git`
 
-`cd php-project-45`
+`$ cd php-project-45`
 
-`make install`
+`$ make install`
 
 ### Run Games:
 
-`make brain-calc`
+`$ make brain-calc`
 
-`make brain-even`
+`$ make brain-even`
 
-`make brain-gcd`
+`$ make brain-gcd`
 
-`make nrain prime`
+`$ make nrain prime`
 
-`make brain-progression`
+`$ make brain-progression`
 
 ### Asciinema Brain-even:
 [![asciicast](https://asciinema.org/a/SGxAxUovieEd5VTGzvB5eoAg9.svg)](https://asciinema.org/a/SGxAxUovieEd5VTGzvB5eoAg9)
