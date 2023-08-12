@@ -14,7 +14,7 @@ function runGame(string $gameRule, array $gameData): void
     line("Hello, %s!", $name);
     line($gameRule);
 
-    foreach ($gameData as $gameQuestion => $gameResult) {
+    foreach ($gameData as [$gameQuestion, $gameResult]) {
         line("Question: %s", $gameQuestion);
         $userAnswer = prompt('Your answer');
 
@@ -22,9 +22,10 @@ function runGame(string $gameRule, array $gameData): void
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $gameResult);
             line("Let's try again, %s!", $name);
             return;
-        } else {
-            line('Correct!');
         }
+
+        line('Correct!');        
     }
+
     line("Congratulations, %s!", $name);
 }
