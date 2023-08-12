@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Even;
+namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\runGame;
 
@@ -14,9 +14,18 @@ function runEven(): void
 
     for ($i = 0; $i < ROUNDS; $i += 1) {
         $question = rand(1, 100);
-        $answer = ($question % 2 === 0) ? 'yes' : 'no';
-        $gameData[$question] = $answer;
+        $answer = isEven($question) ? 'yes' : 'no';
+        $gameData[] = [$question, $answer];
     }
 
     runGame(RULE, $gameData);
+}
+
+function isEven(int $number): bool
+{
+    if ($number % 2 === 0) {
+        return true;
+    }
+    
+    return false;
 }
