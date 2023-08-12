@@ -1,7 +1,4 @@
-### Hexlet tests and linter status:
 [![Actions Status](https://github.com/ArtemRyz/php-project-45/workflows/hexlet-check/badge.svg)](https://github.com/ArtemRyz/php-project-45/actions)
-
-### CodeClimate Maintainability:
 [![Maintainability](https://api.codeclimate.com/v1/badges/c2475677e93987622c69/maintainability)](https://codeclimate.com/github/ArtemRyz/php-project-45/maintainability)
 
 ### Description:
@@ -18,7 +15,12 @@
 
 ### Minimum requirements:
 
-* [Composer 2.5.7 or above for the latest version.](https://getcomposer.org)
+* [Ubuntu](https://ubuntu.com)
+* [Composer 2.5 or above for the latest version.](https://getcomposer.org)
+* [PHP 8.1 or above for the latest version.](https://www.php.net)
+* Make Tool:
+`sudo apt update`
+`sudo apt install make`
 
 ### Installation:
 
