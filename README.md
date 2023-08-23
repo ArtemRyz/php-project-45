@@ -15,14 +15,9 @@
 
 ### Minimum requirements:
 
-* [Ubuntu](https://ubuntu.com)
 * [Composer 2.5 or above for the latest version.](https://getcomposer.org)
 * [PHP 8.1 or above for the latest version.](https://www.php.net)
-* Make Tool:
-
-`$ sudo apt update`
-
-`$ sudo apt install make`
+* Make Tool 4.3 or above for the latest version.
 
 ### Installation:
 
