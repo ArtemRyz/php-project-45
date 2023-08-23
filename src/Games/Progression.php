@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\runGame;
 
-use const BrainGames\Engine\ROUNDS;
+use const BrainGames\Engine\ROUNDS_COUNT;
 
 const RULE = 'What number is missing in the progression?';
 
@@ -13,12 +13,12 @@ function runProgression(): void
     $answer = [];
     $gameData = [];
 
-    for ($i = 0; $i < ROUNDS; $i += 1) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i += 1) {
         $randNum = rand(0, 100);
-        $stepOfPrgression = rand(1, 5);
-        $progression = makeProgression($randNum, $stepOfPrgression);
+        $step = rand(1, 5);
+        $progression = makeProgression($randNum, $step);
 
-        $randKey = array_rand($progression, 1);
+        $randKey = array_rand($progression);
         $answer = (string)$progression[$randKey];
 
         $progressionSpace = $progression;
@@ -35,8 +35,8 @@ function makeProgression(int $number, int $step): array
 {
     $arr = [$number];
 
-    for ($i = 1; $i < 10; $i += 1) {
-        $arr[] = $arr[$i - 1]  + $step;
+    for ($i = 0; $i < 9; $i += 1) {
+        $arr[] = $arr[$i]  + $step;
     }
 
     return $arr;
