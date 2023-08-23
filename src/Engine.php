@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-const ROUNDS = 3;
+const ROUNDS_COUNT = 3;
 
 function runGame(string $gameRule, array $gameData): void
 {
@@ -14,12 +14,12 @@ function runGame(string $gameRule, array $gameData): void
     line("Hello, %s!", $name);
     line($gameRule);
 
-    foreach ($gameData as [$gameQuestion, $gameResult]) {
-        line("Question: %s", $gameQuestion);
+    foreach ($gameData as [$question, $correctAnswer]) {
+        line("Question: %s", $question);
         $userAnswer = prompt('Your answer');
 
-        if ($userAnswer !== $gameResult) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $gameResult);
+        if ($userAnswer !== $correctAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
             return;
         }
