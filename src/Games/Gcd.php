@@ -32,13 +32,12 @@ function calcGcd(int $min, int $max): int
     $gcd = 1;
 
     if ($min === $max) {
-        $gcd = $min;
+        return $min;
     }
 
     for ($i = $min; $i >= 1; $i -= 1) {
         if ($max % $i === 0 && $min % $i === 0) {
-            $gcd = $i;
-            break;
+            return $i;
         }
     }
     return $gcd;
