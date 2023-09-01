@@ -33,6 +33,8 @@ function runProgression(): void
 
 function makeProgression(int $firstNumber, int $step): array
 {
+    $progression = [];
+
     for ($i = 0; $i < 10; $i += 1) {
         $progression[] = $firstNumber  + $step * $i;
     }
