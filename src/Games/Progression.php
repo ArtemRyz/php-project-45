@@ -31,13 +31,11 @@ function runProgression(): void
     runGame(RULE, $gameData);
 }
 
-function makeProgression(int $number, int $step): array
+function makeProgression(int $firstNumber, int $step): array
 {
-    $arr = [$number];
-
-    for ($i = 0; $i < 9; $i += 1) {
-        $arr[] = $arr[$i]  + $step;
+    for ($i = 0; $i < 10; $i += 1) {
+        $progression[] = $firstNumber  + $step * $i;
     }
 
-    return $arr;
+    return $progression;
 }
