@@ -10,7 +10,6 @@ const RULE = 'What number is missing in the progression?';
 
 function runProgression(): void
 {
-    $answer = [];
     $gameData = [];
 
     for ($i = 0; $i < ROUNDS_COUNT; $i += 1) {
@@ -24,8 +23,8 @@ function runProgression(): void
         $progressionSpace = $progression;
         $progressionSpace[$randKey] = '..';
 
-        $impl = implode(" ", $progressionSpace);
-        $gameData[] = [$impl, $answer];
+        $qwestion = implode(" ", $progressionSpace);
+        $gameData[] = [$qwestion, $answer];
     }
 
     runGame(RULE, $gameData);
