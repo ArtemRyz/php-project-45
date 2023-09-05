@@ -10,7 +10,6 @@ const RULE = 'Find the greatest common divisor of given numbers.';
 
 function runGcd(): void
 {
-    $answer = 0;
     $gameData = [];
 
     for ($i = 0; $i < ROUNDS_COUNT; $i += 1) {
@@ -18,7 +17,7 @@ function runGcd(): void
         $num2 = rand(1, 20);
         $maxNumber = max($num1, $num2);
         $minNumber = min($num1, $num2);
-        $question = "{$num1} {$num2}";
+        $question = "$num1 $num2";
         $answer = (string)calcGcd($maxNumber, $minNumber);
 
         $gameData[] = [$question, $answer];
