@@ -26,16 +26,16 @@ function runGcd(): void
     runGame(RULE, $gameData);
 }
 
-function calcGcd(int $min, int $max): int
+function calcGcd(int $minNumber, int $maxNumber): int
 {
     $gcd = 1;
 
-    if ($min === $max) {
-        return $min;
+    if ($minNumber === $maxNumber) {
+        return $minNumber;
     }
 
-    for ($i = $min; $i >= 1; $i -= 1) {
-        if ($max % $i === 0 && $min % $i === 0) {
+    for ($i = $minNumber; $i >= 1; $i -= 1) {
+        if ($maxNumber % $i === 0 && $minNumber % $i === 0) {
             return $i;
         }
     }
